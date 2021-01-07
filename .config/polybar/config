@@ -1,0 +1,279 @@
+[colors]
+background = #000
+foreground = #dfdfdf
+foreground-alt = #555
+;primary = #1b9fc6
+;secondary = #dfdfdf
+alert = #bd2c40
+
+[bar/bar_1]
+width = 100%
+height = 17
+radius = 0.0
+fixed-center = flase
+bottom = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+line-color = #f00
+
+border-size = 0
+border-color = #000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = Open Sans Regular:pixelsize=9;2
+font-1 = Font Awesome 5 Free:pixelsize=9;2
+font-2 = Font Awesome 5 Free Solid:pixelsize=9;2
+font-3 = Font Awesome 5 Brands:pixelsize=9;2
+
+modules-left = bspwm i3
+modules-right =  network_speed memory temperature cpu battery pulseaudio pacman-updates date powermenu
+separator = "|"
+
+tray-position = right
+tray-padding = 1
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+mount-0 = /
+label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+
+label-mode-padding = 2
+label-mode-foreground = #333333
+label-mode-background = ${colors.primary}
+
+label-focused = %icon%
+label-focused-background = #0088CC
+label-focused-padding = 1.2
+
+label-unfocused = %icon%
+label-unfocused-padding = 1.2
+
+label-visible = %icon%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+label-urgent = %icon%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-separator = " "
+
+[module/bspwm]
+type = internal/bspwm
+
+ws-icon-0 = I;
+ws-icon-1 = II;
+ws-icon-2 = III;
+ws-icon-3 = IV;
+ws-icon-4 = V;
+ws-icon-5 = VI;
+ws-icon-6 = VII;
+ws-icon-7 = VIII;
+
+label-focused = %icon%
+label-focused-background = #0088CC
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+label-occupied = %icon%
+label-occupied-padding = 2
+
+label-urgent = %icon%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-empty = %icon%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 2
+
+; Separator in between workspaces
+label-separator = |
+
+[module/cpu]
+type = internal/cpu
+interval = 5
+format-prefix = " "
+format-prefix-foreground = #96c6f8
+label = %percentage%%
+label-foreground = #96c6f8
+
+[module/memory]
+type = internal/memory
+interval = 6
+format = <label>
+format-prefix = "  "
+format-prefix-foreground = #32CD32
+label = %percentage_used%%
+label-foreground = #32CD32
+
+[module/network_speed]
+type = internal/network
+interface = wlp6s0
+interval = 2.0
+label-connected = "   %downspeed%   %upspeed%"
+label-disconnected = disconnected
+label-connected-foreground = #fc6b03
+
+[module/wlan]
+type = internal/network
+interface = wlp6s0
+interval = 60.0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-underline = #9f78e1
+label-connected = %essid%
+
+format-disconnected = <label-disconnected>
+format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/eth]
+type = internal/network
+interface = enp7s0
+interval = 3.0
+
+format-connected-underline = #55aa55
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
+
+format-disconnected = <label-disconnected>
+format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/date]
+type = internal/date
+interval = 20
+date-alt = "%d-%m-%Y"
+time = "%H:%M"
+time-alt = "%H:%M:%S"
+format-prefix-foreground = #dbcb75
+label = "%date% %time%"
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <label-volume>
+label-volume =   %percentage%%
+label-volume-foreground = #208273
+label-muted =   
+label-muted-foreground = #208273
+click-right = pavucontrol
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 86
+interval = 60
+
+format-charging = "<ramp-capacity> <label-charging> CHR"
+format-discharging = <ramp-capacity> <label-discharging>
+format-full-prefix = " "
+
+ramp-capacity-0= " "
+ramp-capacity-1 = " "
+ramp-capacity-2 = ""
+
+[module/temperature]
+type = internal/temperature
+interval = 10
+base-temperature = 0
+warn-temperature = 55
+hwmon-path = /sys/devices/virtual/hwmon/hwmon3/temp1_input
+
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${self.format-underline}
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = #FF0000
+label-foreground = #FFFF00
+
+ramp-0 = " "
+ramp-1 = " "
+ramp-2 = " "
+ramp-foreground = #FFFF00
+
+[module/powermenu]
+type = custom/menu
+expand-right = false
+format-spacing = 1.5
+label-open = 
+label-open-foreground = #96c6f8
+label-close = CANCEL
+label-close-foreground = #96c6f8
+label-separator = "|"
+label-separator-foreground = #FF0000
+
+menu-0-0 = reboot
+menu-0-0-exec = systemctl reboot
+menu-0-1 = power off
+menu-0-1-exec = systemctl poweroff
+menu-0-2 = suspend
+menu-0-2-exec = systemctl suspend
+menu-0-3 = logout
+menu-0-3-exec = i3-msg exit
+
+[module/pacman-updates]
+type = custom/script
+exec = checkupdates | wc -l 
+interval = 900
+label = %output%
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-prefix = " "
+format-prefix-foreground = #ff0000
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 1
+margin-bottom = 1
+
+; vim:ft=dosini
