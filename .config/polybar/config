@@ -27,7 +27,8 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Open Sans Regular:pixelsize=9;2
+font-0 = Open Sans:pixelsize=9;2
+;font-0 = Iosevka:pixelsize=9;2
 font-1 = Font Awesome 5 Free:pixelsize=9;2
 font-2 = Font Awesome 5 Free Solid:pixelsize=9;2
 font-3 = Font Awesome 5 Brands:pixelsize=9;2
@@ -229,7 +230,7 @@ label-warn = %temperature-c%
 label-warn-foreground = #FF0000
 label-foreground = #FFFF00
 
-ramp-0 = " "
+ramp-0 = ""
 ramp-1 = " "
 ramp-2 = " "
 ramp-foreground = #FFFF00
@@ -251,8 +252,8 @@ menu-0-1 = power off
 menu-0-1-exec = systemctl poweroff
 menu-0-2 = suspend
 menu-0-2-exec = systemctl suspend
-# menu-0-3 = logout
-# menu-0-3-exec = i3-msg exit
+menu-0-3 = logout
+menu-0-3-exec = bspc quit
 
 [module/pacman-updates]
 type = custom/script
