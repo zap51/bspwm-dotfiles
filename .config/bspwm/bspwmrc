@@ -3,7 +3,7 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 $HOME/.config/polybar/launch.sh
 pgrep -x nm-applet > /dev/null || nm-applet &
-feh --bg-scale $HOME/bg_24.jpg
+feh --bg-scale $HOME/.config/bspwm/wallpaper.jpg
 picom -f &
 
 # Monitors.
