@@ -131,3 +131,7 @@ super + {Left,Down,Up,Right}
 # Lockscreen
 super + x
 	i3lock -i ~/.config/bspwm/scr_lck.png -t -f
+
+# Take a Screenshot
+super + shift + p
+	scrot ~/Pictures/%d-%m-%Y-%T-screenshot.png
