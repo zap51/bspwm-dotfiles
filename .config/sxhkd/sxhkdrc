@@ -15,6 +15,7 @@ super + n
 # Handle Volume.
 XF86Audio{Lower,Raise}Volume
         amixer set Master 5%{-,+}
+
 XF86AudioMute
         amixer set Master toggle
 
