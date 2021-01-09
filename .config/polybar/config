@@ -7,7 +7,7 @@ alert = #bd2c40
 
 [bar/bar_1]
 width = 100%
-height = 17
+height = 20
 radius = 0.0
 fixed-center = flase
 bottom = true
@@ -26,14 +26,14 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Open Sans:pixelsize=9;2
-;font-0 = Iosevka:pixelsize=9;2
-font-1 = Font Awesome 5 Free:pixelsize=9;2
-font-2 = Font Awesome 5 Free Solid:pixelsize=9;2
+font-0 = Open Sans:pixelsize=9;3
+;font-0 = Iosevka:pixelsize=9;3
+font-1 = Font Awesome 5 Free:pixelsize=9;3
+font-2 = Font Awesome 5 Free Solid:pixelsize=9;3
 font-3 = Font Awesome 5 Brands:pixelsize=9;2
 
 modules-left = bspwm
-modules-right =  network_speed memory temperature cpu battery pulseaudio date powermenu
+modules-right =  network_speed memory temperature cpu battery pulseaudio pacman-updates date powermenu
 separator = "|"
 
 tray-position = right
@@ -141,9 +141,9 @@ label-foreground = #66FF00
 type = internal/network
 interface = wlp6s0
 interval = 2.0
-label-connected = "   %downspeed%   %upspeed%"
+label-connected = "  %downspeed%   %upspeed%"
 label-disconnected = disconnected
-label-connected-foreground = #fcf876
+label-connected-foreground = #ECEFF4
 
 [module/wlan]
 type = internal/network
