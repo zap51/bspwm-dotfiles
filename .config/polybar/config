@@ -13,6 +13,7 @@ fixed-center = flase
 bottom = true
 background = ${colors.background}
 foreground = ${colors.foreground}
+wm-restack = bspwm
 
 line-size = 0
 line-color = #f00
@@ -191,7 +192,7 @@ label-foreground = #ffdf90
 [module/pulseaudio]
 type = internal/pulseaudio
 format-volume = <label-volume>
-label-volume =   %percentage%%
+label-volume =  %percentage%%
 label-volume-foreground = #ff8080
 label-muted = " Mute" 
 label-muted-foreground = f33535
