@@ -138,7 +138,7 @@ label-foreground = #66FF00
 type = internal/network
 interface = wlp6s0
 interval = 2.0
-label-connected = " %downspeed%  %upspeed%"
+label-connected = "%{F#ff7b54} %{F-}%{F#FF8C00}%downspeed%%{F-} %{F#e1d89f}%upspeed%"
 label-disconnected = disconnected
 label-connected-foreground = #ECEFF4
 
