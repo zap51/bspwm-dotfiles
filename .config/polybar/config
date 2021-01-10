@@ -26,11 +26,9 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Open Sans:pixelsize=9;3
-;font-0 = Iosevka:pixelsize=9;3
-font-1 = Font Awesome 5 Free:pixelsize=9;3
-font-2 = Font Awesome 5 Free Solid:pixelsize=9;3
-font-3 = Font Awesome 5 Brands:pixelsize=9;2
+font-0 = Iosevka:pixelsize=9.9;3
+font-1 = Font Awesome 5 Free Solid:pixelsize=9;3
+font-2 = Font Awesome 5 Brands:pixelsize=9;3
 
 modules-left = bspwm
 modules-right =  network_speed memory temperature cpu battery pulseaudio pacman-updates date powermenu
@@ -106,7 +104,7 @@ label-focused-padding = 2
 
 label-occupied = %icon%
 label-occupied-padding = 2
-label-occupied-foreground = #f05454
+label-occupied-foreground = #32CD32
 
 label-urgent = %icon%!
 label-urgent-background = ${colors.alert}
@@ -131,17 +129,16 @@ label-foreground = #3ec1d3
 type = internal/memory
 interval = 6
 format = <label>
-format-prefix = "  "
+format-prefix = " "
 format-prefix-foreground = #32CD32
 label = %percentage_used%%
-;label-foreground = #32CD32
 label-foreground = #66FF00
 
 [module/network_speed]
 type = internal/network
 interface = wlp6s0
 interval = 2.0
-label-connected = "  %downspeed%   %upspeed%"
+label-connected = " %downspeed%  %upspeed%"
 label-disconnected = disconnected
 label-connected-foreground = #ECEFF4
 
@@ -196,7 +193,7 @@ type = internal/pulseaudio
 format-volume = <label-volume>
 label-volume =   %percentage%%
 label-volume-foreground = #ff8080
-label-muted =   
+label-muted = " Mute" 
 label-muted-foreground = f33535
 click-right = pavucontrol
 
@@ -214,8 +211,8 @@ ramp-capacity-foreground = #abf0e9
 label-charging-foreground = #f6f7d7
 label-discharging-foreground = #defcfc
 
-ramp-capacity-0 = " "
-ramp-capacity-1 = " "
+ramp-capacity-0 = ""
+ramp-capacity-1 = ""
 ramp-capacity-2 = ""
 
 [module/temperature]
@@ -225,19 +222,19 @@ base-temperature = 0
 warn-temperature = 55
 hwmon-path = /sys/devices/virtual/hwmon/hwmon3/temp1_input
 
-format = <ramp> <label>
-format-warn = <ramp> <label-warn>
+format =  <ramp> <label>
+format-warn = <label-warn>
 format-warn-underline = ${self.format-underline}
 
 label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = #FF000
-label-foreground = #ff9a00
+label-foreground = #e2582f
 
-ramp-0 = ""
-ramp-1 = " "
-ramp-2 = " "
-ramp-foreground = #0881a3
+ramp-0 = ""
+ramp-1 = ""
+ramp-2 = ""
+ramp-foreground = #e25822
 
 [module/powermenu]
 type = custom/menu
@@ -247,8 +244,6 @@ label-open = 
 label-open-foreground = #ff6f3c
 label-close = CANCEL
 label-close-foreground = #ff6f3c
-label-separator = "|"
-label-separator-foreground = #FF0000
 
 menu-0-0 = reboot
 menu-0-0-exec = systemctl reboot

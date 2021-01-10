@@ -5,6 +5,7 @@ $HOME/.config/polybar/launch.sh
 pgrep -x nm-applet > /dev/null || nm-applet &
 feh --bg-scale $HOME/.config/bspwm/wallpaper.jpg
 picom -f &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Monitors.
 bspc monitor -d I II III IV V VI VII VIII
@@ -39,7 +40,7 @@ bspc rule -a Brave-browser desktop='^2' follow=on
 bspc rule -a Firefox desktop='^2' follow=on
 bspc rule -a Pcmanfm desktop='^3' follow=on
 bspc rule -a zoom desktop='^4' follow=on
-bscp rule -a TelegramDesktop desktop='^5' follow=on
+bscp rule -a "Telegram" desktop='^5' follow=on
 bscp rule -a vlc desktop='^6' follow=on
 bscp rule -a Virt-manager desktop='^7' follow=on
 bsco rule -a Code desktop='^8' follow=on

@@ -3,10 +3,11 @@
 # Author: Seth Wright (http://sethawright.com)
 
 foreground          = #c5c8c6
+;foreground	    = #ffffff
 foreground_bold     = #c5c8c6
 cursor              = #c5c8c6
 cursor_foreground   = #1d1f21
-background = rgba(0, 0, 0, 0.4)
+background = rgba(0, 0, 0, 0.6)
 # 16 color space
 
 # Black, Gray, Silver, White
