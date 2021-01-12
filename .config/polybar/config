@@ -90,14 +90,14 @@ label-separator = " "
 [module/bspwm]
 type = internal/bspwm
 
-ws-icon-0 = I;
+ws-icon-0 = I;
 ws-icon-1 = II;
 ws-icon-2 = III;
 ws-icon-3 = IV;
 ws-icon-4 = V;
 ws-icon-5 = VI;
 ws-icon-6 = VII;
-ws-icon-7 = VIII;
+ws-icon-7 = VIII;
 
 label-focused = %icon%
 label-focused-background = #fdb827
