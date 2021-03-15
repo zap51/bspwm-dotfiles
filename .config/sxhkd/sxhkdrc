@@ -1,7 +1,7 @@
 # BSPWM.
 # Application Launchers.
 super + Return
-	termite
+	tilda
 
 super + d
 	j4-dmenu-desktop
